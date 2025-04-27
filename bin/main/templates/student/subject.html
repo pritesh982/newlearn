@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learner Dashboard - Learnify</title>
+</head>
+
+<body>
+    <div th:replace="fragments/studentheader :: studentheader"></div>
+    <div class="container">
+
+        <h2 th:text="'Documents for: ' + ${subject.name}">Study Materials</h2>
+
+        <div class="section" th:each="entry : ${categoryMap}">
+            <h3 th:text="${entry.key}">Category Name</h3>
+            <div class="subject-container">
+                <div class="subject-card" th:each="doc : ${entry.value}">
+                    <span th:text="${doc.filename}">Filename</span>
+                    <a th:href="@{'/uploads/' + ${#strings.replace(doc.filePath.split('uploads\\')[1], '\\', '/')}}" class="download-btn" target="_blank">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="fragments/studentfooter :: studentfooter"></div>
+</body>
+
+</html>
