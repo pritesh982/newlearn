@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learner Dashboard - Learnify</title>
+
+</head>
+
+<body>
+  <div th:replace="fragments/studentheader :: studentheader"></div>
+  <div class="container">
+    <!-- Study Materials Section -->
+    <div class="section">
+      <h2>All Subject</h2>
+      <div class="subject-container">
+        <a class="subject-card" th:each="subject : ${subjects}" th:href="@{/student/show/{id}(id=${subject.id})}"
+          th:text="${subject.name}">
+        </a>
+      </div>
+    </div>
+
+    <!-- Previous Year Papers Section -->
+    <div class="section">
+      <h2>All Category</h2>
+      <div class="subject-container">
+        <a class="subject-card" th:each="category : ${categories}" th:href="@{/student/showcat/{id}(id=${category.id})}"
+          th:text="${category.name}">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div th:replace="fragments/studentfooter :: studentfooter"></div>
+</body>
+
+</html>

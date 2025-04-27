@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Learnify</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .navbar a:hover {
+            background: #2980b9;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        h1 {
+            color: #2c3e50;
+            font-size: 3rem;
+            margin-top: 60px;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+
+        img {
+            width: 40%;
+            max-width: 400px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        a {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #062d46;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.2s;
+            width: 200px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: #1e1e1e;
+            color: white;
+        }
+
+        .dark-mode .navbar {
+            background: black;
+        }
+
+        /* Animations */
+        .animate {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div>📚 <b>Learnify</b></div>
+        <div>
+            <a href="#">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <h1>Welcome to <span style="color: #ff6347;">Learnify</span></h1>
+    <p class="tagline">Empowering minds, one lesson at a time</p>
+
+    <img src="/image/stdstudy.jpg" alt="Books Image">
+
+    <div class="button-container">
+        <a href="/login" >Student Login</a>
+        <a href="/login">Teacher Login</a>
+        <a href="/login">Admin Login</a>
+    </div>
+
+    <!-- <footer>
+         <p>© 2025 Learnify. All rights reserved.</p> 
+    </footer> -->
+
+    <script>
+        function goToLearnerLogin() {
+            window.location.href = 'learnerlogin.html'; 
+        }
+
+        function goToUploaderLogin() {
+            window.location.href = 'uploaderlogin.html'; 
+        }
+
+    </script>
+</body>
+</html>

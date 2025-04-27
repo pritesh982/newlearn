@@ -1,0 +1,74 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <section th:replace="fragments/header :: header"></section>
+    <div id="layoutSidenav">
+        <div th:replace="fragments/sidebar :: sidebar"></div>
+        <div id="layoutSidenav_content">
+           
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <div th:if="${message}" class="alert alert-success" role="alert">
+                        <p th:text="${message}"></p>
+                        </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Total Subject</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <p class="small text-white stretched-link" th:text="${subjectCount}">0</p>
+                                    <div class="small text-white">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">Total Category</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <p class="small text-white stretched-link" th:text="${categoryCount}">0</p>
+                                    <div class="small text-white">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">Total User</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <p class="small text-white stretched-link" th:text="${userCount}">0</p>
+                                    <div class="small text-white">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Total Books</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <p class="small text-white stretched-link" th:text="${documentCount}">0</p>
+                                    <div class="small text-white">
+                                        <i class="fas fa-angle-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <section th:replace="fragments/footer :: footer"></section>
+</body>
+
+</html>
